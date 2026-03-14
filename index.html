@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Insurance Underwriting Form</title>
+  <p><strong>Note:</strong> This GitHub Pages site hosts the frontend demo only. The FastAPI backend must be run locally or deployed separately for live API submission.</p>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -60,34 +62,42 @@
 
   <h2>Result</h2>
   <pre id="result">No submission yet.</pre>
+<script>
+  const API_BASE_URL = "http://127.0.0.1:8000";
 
-  <script>
-    document.getElementById("appForm").addEventListener("submit", async function(event) {
-      event.preventDefault();
+  document.getElementById("appForm").addEventListener("submit", async function(event) {
+    event.preventDefault();
 
-      const payload = {
-        full_name: document.getElementById("full_name").value,
-        age: parseInt(document.getElementById("age").value),
-        smoker: document.getElementById("smoker").value,
-        annual_income: parseFloat(document.getElementById("annual_income").value),
-        coverage_amount: parseFloat(document.getElementById("coverage_amount").value)
-      };
+    const payload = {
+      full_name: document.getElementById("full_name").value,
+      age: parseInt(document.getElementById("age").value),
+      smoker: document.getElementById("smoker").value,
+      annual_income: parseFloat(document.getElementById("annual_income").value),
+      coverage_amount: parseFloat(document.getElementById("coverage_amount").value)
+    };
 
-      try {
-        const response = await fetch("http://127.0.0.1:8000/applications", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        });
+    try {
+      const response = await fetch(`${API_BASE_URL}/applications`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
 
-        const data = await response.json();
-        document.getElementById("result").textContent = JSON.stringify(data, null, 2);
-      } catch (error) {
-        document.getElementById("result").textContent = "Error connecting to API. Make sure the backend is running.";
+      if (!response.ok) {
+        throw new Error("API request failed");
       }
-    });
-  </script>
+
+      const data = await response.json();
+      document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+    } catch (error) {
+      document.getElementById("result").textContent =
+        "Live site note: this frontend is hosted on GitHub Pages, but the FastAPI backend must be running locally or deployed separately. To test the full workflow locally, start the backend with 'uvicorn app.main:app --reload' and open http://127.0.0.1:8000/docs.";
+    }
+  });
+</script>
+
+ 
 </body>
 </html>
