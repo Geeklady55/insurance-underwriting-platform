@@ -1,6 +1,25 @@
 # Insurance Underwriting Platform
 
-A beginner-friendly insurance application and underwriting API project inspired by modern digital insurance workflows.
+![Python](https://img.shields.io/badge/Python-3.11+-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![SQLAlchemy](https://img.shields.io/badge/SQLAlchemy-ORM-red)
+![SQLite](https://img.shields.io/badge/SQLite-Database-lightgrey)
+![Status](https://img.shields.io/badge/Status-Portfolio%20Project-success)
+
+A portfolio-ready insurance underwriting platform that simulates a digital application intake and decision workflow using FastAPI, SQLAlchemy, SQLite, and business-rule processing.
+
+## Why I Built This
+
+I built this project to demonstrate API design, backend development, data modeling, business workflow automation, and technical documentation in a way that reflects real-world platform and solutions engineering work.
+
+## Highlights
+
+- API-first underwriting workflow
+- Risk scoring and decision engine
+- Database-backed application storage
+- Swagger UI for testing and demonstration
+- Technical documentation for architecture, workflow, and business context
+- Portfolio-ready structure for GitHub presentation
 
 ## Features
 - Submit insurance applications
@@ -104,3 +123,14 @@ Screenshots are available in `docs/screenshots/` and can be added here as the pr
 - Replace HTML form with React frontend
 - Add automated tests
 - Add GitHub Actions CI
+
+## Architecture Diagram
+
+![Architecture Diagram](docs/screenshots/architecture-diagram.png)
+
+## Workflow Diagram
+
+![Workflow Diagram](docs/screenshots/workflow-diagram.png)
+
+
+
