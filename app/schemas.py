@@ -20,4 +20,4 @@ class InsuranceApplicationResponse(BaseModel):
     risk_score: int
     decision: str
 
-  model_config = ConfigDict(from_attributes=True)
+    model_config = ConfigDict(from_attributes=True)
