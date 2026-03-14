@@ -60,6 +60,14 @@ def create_application(
     db.add(db_application)
     db.commit()
     db.refresh(db_application)
+        audit_entry = AuditLog(
+        application_id=db_application.id,
+        action="CREATE_APPLICATION",
+        detail=f"Application created for {db_application.full_name}"
+    )
+    db.add(audit_entry)
+    db.commit()
+
 
     return db_application
 
