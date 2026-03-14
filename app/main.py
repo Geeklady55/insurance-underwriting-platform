@@ -7,6 +7,23 @@ from .database import Base, SessionLocal, engine
 from .rules import calculate_risk
 from .audit_models import AuditLog
 
+from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from .auth import create_access_token
+
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
+fake_user = {
+    "username": "admin",
+    "password": "password123"
+}
+
+@app.post("/token")
+def login(form_data: OAuth2PasswordRequestForm = Depends()):
+    if form_data.username != fake_user["username"] or form_data.password != fake_user["password"]:
+        raise HTTPException(status_code=401, detail="Invalid credentials")
+
+    access_token = create_access_token(data={"sub": form_data.username})
+    return {"access_token": access_token, "token_type": "bearer"}
 
 Base.metadata.create_all(bind=engine)
 
