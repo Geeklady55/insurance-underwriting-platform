@@ -110,12 +110,23 @@ Open `index.html` in your browser and submit a sample application.
 ```
 ## Screenshots
 
-Screenshots are available in `docs/screenshots/` and can be added here as the project evolves:
-- Swagger API interface
-- Application submission example
-- Approved response example
-- Terminal startup view
-- Project structure in VS Code
+### Swagger UI
+![Swagger UI](docs/screenshots/swagger-home.png)
+
+### Submit Application
+![Submit Application](docs/screenshots/post-application.png)
+
+### Approved Response
+![Approved Response](docs/screenshots/response-approved.png)
+
+### Application List
+![Application List](docs/screenshots/application-list.png)
+
+### VS Code Project Structure
+![VS Code Project](docs/screenshots/vscode-project.png)
+
+### Terminal Startup
+![Terminal Startup](docs/screenshots/terminal-startup.png)
 ## Next Improvements
 - Add audit logging
 - Add JWT authentication
@@ -124,6 +135,17 @@ Screenshots are available in `docs/screenshots/` and can be added here as the pr
 - Add automated tests
 - Add GitHub Actions CI
 
+ ## What This Demonstrates
+
+This project demonstrates my ability to:
+
+- Design and implement REST APIs
+- Build backend workflows using Python and FastAPI
+- Model and persist business data
+- Translate business rules into working logic
+- Document architecture and engineering decisions
+- Present technical work clearly for stakeholders and hiring teams
+
 ## Architecture Diagram
 
 ![Architecture Diagram](docs/screenshots/architecture-diagram.png)
@@ -131,6 +153,10 @@ Screenshots are available in `docs/screenshots/` and can be added here as the pr
 ## Workflow Diagram
 
 ![Workflow Diagram](docs/screenshots/workflow-diagram.png)
+
+## Interview Summary
+
+This project simulates a simplified insurtech underwriting workflow. It accepts application data, validates the request, applies business rules to score risk, stores the result in a database, and returns a structured decision. I designed it as a portfolio project to reflect real-world API, workflow, and platform engineering practices.
 
 
 
