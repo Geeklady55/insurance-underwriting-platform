@@ -5,6 +5,8 @@ from sqlalchemy.orm import Session
 from . import models, schemas
 from .database import Base, SessionLocal, engine
 from .rules import calculate_risk
+from .audit_models import AuditLog
+
 
 Base.metadata.create_all(bind=engine)
 
