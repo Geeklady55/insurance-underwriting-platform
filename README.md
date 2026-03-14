@@ -89,7 +89,14 @@ Open `index.html` in your browser and submit a sample application.
   "coverage_amount": 250000
 }
 ```
+## Screenshots
 
+Screenshots are available in `docs/screenshots/` and can be added here as the project evolves:
+- Swagger API interface
+- Application submission example
+- Approved response example
+- Terminal startup view
+- Project structure in VS Code
 ## Next Improvements
 - Add audit logging
 - Add JWT authentication
